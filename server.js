@@ -13,6 +13,10 @@ server.use('/img', express.static(path.join(__dirname, './dist/client', 'img')))
 server.use('/js', express.static(path.join(__dirname, './dist/client', 'js')));
 server.use('/css', express.static(path.join(__dirname, './dist/client', 'css')));
 server.use('/favicon.ico', express.static(path.join(__dirname, './dist/client', 'favicon.ico')));
+server.use(
+  '/manifest.json',
+  express.static(path.join(__dirname, './dist/client', 'manifest.json'))
+);
 
 server.get('*', async (req, res) => {
   const { app, router } = createApp();
